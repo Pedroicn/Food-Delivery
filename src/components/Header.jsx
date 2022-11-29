@@ -33,13 +33,11 @@ const Header = () => {
         <BsFillCartFill size={20} className='mr-2' /> Carrinho
       </button>
 
-      {/* overlay menu, mobile */}
       {
         sidebar ? <div className='bg-black/80 fixed w-full h-screen top-0 left-0' /> : null
       }
       
 
-      {/* barra lateral */}
       <aside className={ sidebar ? 'fixed top-0 left-0 w-[300px] h-screen bg-white z-10 duration-300' : 'fixed top-0 left-[-100%] w-[300px] h-screen bg-white z-10 duration-300' }>
         <AiOutlineClose onClick={ () => setSidebar(!sidebar) } size={30} className='absolute cursor-pointer right-4 top-4'/>
         <h2 className='text-2xl p-4'>Food <span className='font-bold'>Delivery</span> </h2>
