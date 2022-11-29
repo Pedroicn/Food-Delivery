@@ -1,4 +1,4 @@
-export const data = [
+const data = [
   {
     id: 1,
     name: 'Double Cheeseburger',
@@ -128,3 +128,5 @@ export const data = [
     price: '$$$',
   },
 ];
+
+export default data;

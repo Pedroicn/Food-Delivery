@@ -4,7 +4,6 @@ const HeadlineCards = () => {
   return (
     <section className='max-w-[1640px] mx-auto p-4 py-12 grid md:grid-cols-3 gap-6'>
       <div className='rounded-xl relative'>
-        {/* Overlay */}
         <div className='absolute w-full h-full bg-black/50 rounded-xl text-white'>
           <p className='font-bold text-2xl px-2 pt-4'>Promoção</p>
           <p className='px-2'>Até 28/12</p>
@@ -17,7 +16,6 @@ const HeadlineCards = () => {
         />
       </div>
       <div className='rounded-xl relative'>
-        {/* Overlay */}
         <div className='absolute w-full h-full bg-black/50 rounded-xl text-white'>
           <p className='font-bold text-2xl px-2 pt-4'>Novos Restaurantes</p>
           <p className='px-2'>Adicionados Diariamennte</p>
@@ -29,9 +27,8 @@ const HeadlineCards = () => {
           alt='/'
         />
       </div>
-      {/* Card */}
+
       <div className='rounded-xl relative'>
-        {/* Overlay */}
         <div className='absolute w-full h-full bg-black/50 rounded-xl text-white'>
           <p className='font-bold text-2xl px-2 pt-4'>Entregamos sobremesas também</p>
           <p className='px-2'>As mais saborosas</p>
