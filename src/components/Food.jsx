@@ -3,6 +3,18 @@ import data from '../data/data';
 
 const Food = () => {
   const [foods, setFoods] = useState(data);
+
+  const filterType = (category) => {
+    setFoods(
+      data.filter((item) => item.category === category)
+    );
+  }
+
+  const filterPrice = (price) => {
+    setFoods(
+      data.filter((item) => item.price === price)
+    );
+  }
   return (
     <main className='max-w-[1640px] m-auto px-4 py-12'>
       <h1 className='text-orange-700 font-bold text-4xl text-center'>Melhor avaliados</h1>
@@ -11,21 +23,21 @@ const Food = () => {
         <div>
           <p className='font-bold text-gray-700'>Filtrar</p>
           <div className='flex justify-around flex-wrap'>
-            <button className='m-1 border-orange-700 text-orange-700 hover:bg-orange-700 hover:text-white'>Todos</button>
-            <button className='m-1 border-orange-700 text-orange-700 hover:bg-orange-700 hover:text-white'>Hambuguer</button>
-            <button className='m-1 border-orange-700 text-orange-700 hover:bg-orange-700 hover:text-white'>Pizza</button>
-            <button className='m-1 border-orange-700 text-orange-700 hover:bg-orange-700 hover:text-white'>Salada</button>
-            <button className='m-1 border-orange-700 text-orange-700 hover:bg-orange-700 hover:text-white'>Frango</button>
+            <button onClick={ () => setFoods(data) } className='m-1 border-orange-700 text-orange-700 hover:bg-orange-700 hover:text-white'>Todos</button>
+            <button onClick={ () => filterType('burger') } className='m-1 border-orange-700 text-orange-700 hover:bg-orange-700 hover:text-white'>Hambuguer</button>
+            <button onClick={ () => filterType('pizza') } className='m-1 border-orange-700 text-orange-700 hover:bg-orange-700 hover:text-white'>Pizza</button>
+            <button onClick={ () => filterType('salad') } className='m-1 border-orange-700 text-orange-700 hover:bg-orange-700 hover:text-white'>Salada</button>
+            <button onClick={ () => filterType('chicken') } className='m-1 border-orange-700 text-orange-700 hover:bg-orange-700 hover:text-white'>Frango</button>
           </div>
         </div>
 
         <div>
           <p className='font-bold text-gray-700'>Filtrar por preço</p>
           <div className='flex justify-around max-w-[390px] w-full'>
-            <button className='m-1 border-orange-700 text-orange-700 hover:bg-orange-700 hover:text-white'>$</button>
-            <button className='m-1 border-orange-700 text-orange-700 hover:bg-orange-700 hover:text-white'>$$</button>
-            <button className='m-1 border-orange-700 text-orange-700 hover:bg-orange-700 hover:text-white'>$$$</button>
-            <button className='m-1 border-orange-700 text-orange-700 hover:bg-orange-700 hover:text-white'>$$$$</button>
+            <button onClick={ () => filterPrice('$') } className='m-1 border-orange-700 text-orange-700 hover:bg-orange-700 hover:text-white'>$</button>
+            <button onClick={ () => filterPrice('$$') } className='m-1 border-orange-700 text-orange-700 hover:bg-orange-700 hover:text-white'>$$</button>
+            <button onClick={ () => filterPrice('$$$') } className='m-1 border-orange-700 text-orange-700 hover:bg-orange-700 hover:text-white'>$$$</button>
+            <button onClick={ () => filterPrice('$$$$') } className='m-1 border-orange-700 text-orange-700 hover:bg-orange-700 hover:text-white'>$$$$</button>
           </div>
         </div>
 
