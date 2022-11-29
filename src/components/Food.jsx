@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import data from '../data/data';
+import { data } from '../data/data';
 
 const Food = () => {
   const [foods, setFoods] = useState(data);
@@ -44,7 +44,7 @@ const Food = () => {
       </div>
       <section className='grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6 pt-4'>
         {
-          foods.map((food) => (
+          foods?.map((food) => (
             <div key={ food.id } className='border shadow-lg hover:scale-105 duration-300 rounded-lg' >
               <img src={ food.image } alt={ food.name } className='w-full h-[200px] object-cover rounded-lg' />
               <div className='flex justify-between py-4 px-3 font-bold'>
