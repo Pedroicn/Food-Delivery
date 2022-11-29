@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { GiHamburgerMenu, GiWallet } from 'react-icons/gi';
 import { AiOutlineSearch, AiOutlineClose, AiFillHeart } from 'react-icons/ai';
 import { BsFillCartFill, BsFillArrowUpSquareFill } from 'react-icons/bs';
@@ -8,11 +8,13 @@ import { FaUserFriends } from 'react-icons/fa';
 import { IoTicket } from 'react-icons/io5'
 
 const Header = () => {
+  const [sidebar, setSidebar] = useState(false);
+
   return (
     <header className='max-w-[1640px] mx-auto flex justify-between items-center p-3'>
 
       <div className='flex items-center'>
-        <div className='cursor-pointer'>
+        <div onClick={ () => setSidebar(!sidebar) } className='cursor-pointer'>
           <GiHamburgerMenu size={30} />
         </div>
         <h1 className='text-2xl sm:text-3xl lg:text-4xl px-2'>
@@ -32,12 +34,14 @@ const Header = () => {
       </button>
 
       {/* overlay menu, mobile */}
-      <div className='bg-black/80 fixed w-full h-screen top-0 left-0'>
+      {
+        sidebar ? <div className='bg-black/80 fixed w-full h-screen top-0 left-0' /> : null
+      }
+      
 
-      </div>
       {/* barra lateral */}
-      <aside className='fixed top-0 left-0 w-[300px] h-screen bg-white z-10 duration-300'>
-        <AiOutlineClose size={30} className='absolute cursor-pointer right-4 top-4'/>
+      <aside className={ sidebar ? 'fixed top-0 left-0 w-[300px] h-screen bg-white z-10 duration-300' : 'fixed top-0 left-[-100%] w-[300px] h-screen bg-white z-10 duration-300' }>
+        <AiOutlineClose onClick={ () => setSidebar(!sidebar) } size={30} className='absolute cursor-pointer right-4 top-4'/>
         <h2 className='text-2xl p-4'>Food <span className='font-bold'>Delivery</span> </h2>
         <nav>
           <ul className='flex flex-col p-4 text-gray-800'>
